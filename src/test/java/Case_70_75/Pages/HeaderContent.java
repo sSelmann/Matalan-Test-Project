@@ -9,23 +9,25 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.List;
 
-public class DialogContent extends Parent{
+public class HeaderContent extends Parent{
 
-    public DialogContent() {
+    public HeaderContent() {
         PageFactory.initElements(GWD.getDriver(), this);
     }
 
-    @FindBy(id="//a[@href='/cart']")
-    private WebElement viewBag;
+    @FindBy(xpath="//input[@title='Search - Enter Keyword or Product Code']")
+    private WebElement searchInput;
+
+    @FindBy(css = "button[data-action='submit_search']")
+    private WebElement searchButton;
 
     WebElement myElement;
     public void findAndSend(String strElement, String value){
         // burda string isimden weblemente ulaşıcam
         switch (strElement)
         {
-            //case "username" : myElement =username; break;
+            case "searchInput" : myElement =searchInput; break;
 
         }
 
@@ -35,7 +37,7 @@ public class DialogContent extends Parent{
     public void findAndClick(String strElement){
         switch (strElement)
         {
-            case "viewBag" : myElement =viewBag; break;
+            case "searchButton" : myElement =searchButton; break;
 
 
         }

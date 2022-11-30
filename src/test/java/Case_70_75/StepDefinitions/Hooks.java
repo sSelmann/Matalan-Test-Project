@@ -49,7 +49,6 @@ public class Hooks {
             }
         }
 
-        // ekran görüntüsü al senaryo hatalı ise
         GWD.quitDriver();
     }
 
