@@ -20,7 +20,7 @@ public class Case_75_Steps {
         GWD.getDriver().manage().window().maximize();
     }
 
-    @Then("search")
+    @Then("Search")
     public void search(DataTable elements) {
         List<List<String>> listElement = elements.asLists(String.class);
 
@@ -42,17 +42,6 @@ public class Case_75_Steps {
 
     }
 
-    @And("Select")
-    public void select(DataTable elements) {
-        List<List<String>> listElement = elements.asLists(String.class);
-
-        for(int i=0;i<listElement.size();i++){
-            bc.findAndSelect(listElement.get(i).get(0), listElement.get(i).get(1));
-
-        }
-
-    }
-
     @Then("Send value on the element in the Body Content")
     public void sendValueOnTheElementInTheBodyContent(DataTable elements) {
 
@@ -67,7 +56,7 @@ public class Case_75_Steps {
 
 
     @And("Verify the delivery charge of the product")
-    public void getTextFromBodyContent(DataTable elements) {
+    public void getTextFromBodyContent(DataTable elements) throws InterruptedException {
 
         List<List<String>> listElement = elements.asLists(String.class);
 
