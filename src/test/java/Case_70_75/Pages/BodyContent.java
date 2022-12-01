@@ -23,7 +23,10 @@ public class BodyContent extends Parent{
     private WebElement selectSize;
 
     @FindBy(css="a[rel='853224']")
-    private WebElement option2;
+    private WebElement chest38Option;
+
+    @FindBy(css="a[rel='824981']")
+    private WebElement size4Option;
 
     @FindBy(xpath="(//a[text()='Checkout'])[1]")
     private WebElement checkOut;
@@ -37,8 +40,14 @@ public class BodyContent extends Parent{
     @FindBy(xpath="//input[@id='home_delivery']/..")
     private WebElement homeDelivery;
 
+    @FindBy(xpath="//input[@id='click_and_collect']/..")
+    private WebElement clickAndCollectDeliveryButton;
+
     @FindBy(css="dl[data-ui='bag-linecount__shipping'] dd")
     private WebElement deliveryAmount;
+
+    @FindBy(className="o_load-spinner")
+    private WebElement loadSpinner;
 
 
     public void findAndSend(String strElement, String value){
@@ -57,10 +66,12 @@ public class BodyContent extends Parent{
             case "firstSearchResult" : myElement =firstSearchResult; break;
             case "addToBagButton" : myElement =addToBagButton; break;
             case "selectSize" : myElement =selectSize; break;
-            case "option2" : myElement =option2; break;
+            case "chest38Option" : myElement =chest38Option; break;
             case "checkOut" : myElement =checkOut; break;
             case "continueSecurelyButton" : myElement =continueSecurelyButton; break;
             case "homeDelivery" : myElement =homeDelivery; break;
+            case "clickAndCollectDeliveryButton" : myElement =clickAndCollectDeliveryButton; break;
+            case "size4Option" : myElement =size4Option; break;
 
 
         }
@@ -77,6 +88,16 @@ public class BodyContent extends Parent{
         }
 
         verifyContainsText(myElement,text);
+    }
+
+    public void findAndWaitUnvisible(String strElement){
+        switch (strElement)
+        {
+            case "loadSpinner" : myElement =loadSpinner; break;
+
+        }
+
+        waitInvisibilityOfElement(myElement);
     }
 
 }

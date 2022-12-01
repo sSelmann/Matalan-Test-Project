@@ -1,15 +1,14 @@
 Feature: Delivery Functionality
 
-  Scenario: As a user, search for "Broken Stitch Andersen Gray Suit Jacket" then add it to your bag. Verify that the home delivery is FREE at check out.
-
+  Scenario: As a user, search for "Kids Navy High Top Trainer" and add the product to your bag. then click the payment button. When I select “click & collect” the delivery should be FREE.
     Given Navigate to Matalan.co.uk
     When Search
-      | searchInput | Broken Stitch Andersen Gray Suit Jacket |
+      | searchInput | Kids Navy High Top Trainer |
     Then Click on the element in the Body Content
       | firstSearchResult |
     And Click on the element in the Body Content
       | selectSize     |
-      | chest38Option        |
+      | size4Option    |
       | addToBagButton |
       | checkOut       |
     Then Send value on the element in the Body Content
@@ -17,7 +16,7 @@ Feature: Delivery Functionality
     And Click on the element in the Body Content
       | continueSecurelyButton |
     And Click on the element in the Body Content
-      | homeDelivery |
-    And Verify the delivery charge of the product
-    | deliveryAmount | FREE |
-
+      | homeDelivery            |
+      | clickAndCollectDeliveryButton |
+    And Verify that the delivery charge of the product is FREE
+      | deliveryAmount | FREE |

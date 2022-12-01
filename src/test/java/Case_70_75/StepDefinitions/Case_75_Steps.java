@@ -56,7 +56,7 @@ public class Case_75_Steps {
 
 
     @And("Verify the delivery charge of the product")
-    public void getTextFromBodyContent(DataTable elements) {
+    public void getTextFromBodyContent(DataTable elements) throws InterruptedException {
 
         List<List<String>> listElement = elements.asLists(String.class);
 
