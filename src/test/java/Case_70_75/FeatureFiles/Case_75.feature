@@ -1,9 +1,9 @@
-Feature: Login Functionality
+Feature: Delivery Functionality
 
-  Scenario: Navigate to Matalan.co.uk
+  Scenario: As a user, search for "Broken Stitch Andersen Gray Suit Jacket" then add it to your bag. Verify that the home delivery is FREE at check out.
 
     Given Navigate to Matalan.co.uk
-    When search
+    When Search
       | searchInput | Broken Stitch Andersen Gray Suit Jacket |
     Then Click on the element in the Body Content
       | firstSearchResult |

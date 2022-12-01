@@ -20,7 +20,7 @@ public class Case_75_Steps {
         GWD.getDriver().manage().window().maximize();
     }
 
-    @Then("search")
+    @Then("Search")
     public void search(DataTable elements) {
         List<List<String>> listElement = elements.asLists(String.class);
 
@@ -38,17 +38,6 @@ public class Case_75_Steps {
 
         for(int i=0;i<listElement.size();i++) {
             bc.findAndClick(listElement.get(i));
-        }
-
-    }
-
-    @And("Select")
-    public void select(DataTable elements) {
-        List<List<String>> listElement = elements.asLists(String.class);
-
-        for(int i=0;i<listElement.size();i++){
-            bc.findAndSelect(listElement.get(i).get(0), listElement.get(i).get(1));
-
         }
 
     }
